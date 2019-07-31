@@ -31,6 +31,12 @@ defmodule YamlElixir.Mapper do
        ),
        do: key_for(element, options)
 
+defp _to_map(
+        {:yamerl_binary, :yamerl_node_binary, _tag, _loc, element},
+        options
+      ),
+      do: key_for(to_charlist(element), options)
+
   defp _to_map({:yamerl_null, :yamerl_node_null, _tag, _loc}, _options), do: nil
   defp _to_map({_yamler_element, _yamler_node_element, _tag, _loc, elem}, _options), do: elem
 

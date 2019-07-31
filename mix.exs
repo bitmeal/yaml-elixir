@@ -16,7 +16,7 @@ defmodule YamlElixir.Mixfile do
 
   defp deps do
     [
-      {:yamerl, "~> 0.7"},
+      {:yamerl, "~> 0.7", git: "https://github.com/bitmeal/yamerl", branch: "yaml_binary"},
       {:ex_doc, "~> 0.20", only: :dev}
     ]
   end
